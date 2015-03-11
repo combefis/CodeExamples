@@ -6,11 +6,11 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Generic beer characterised by a list of beer types
- * and a strength; and a barcode, name and price
+ * Generic beer characterised by a list of beer types,
+ * a strength, a barcode and a name
  * 
  * @author Sébastien Combéfis
- * @version February 11, 2015
+ * @version March 11, 2015
  */
 public final class Beer extends Item
 {
@@ -19,12 +19,14 @@ public final class Beer extends Item
 	private final double strength;
 	
 	/**
-	 * Creates a beer with the specified barcode, name, strength and list of beer types
+	 * Creates a beer with a barcode, name, strength and list of beer types
 	 * 
 	 * @pre "barcode" > 0
 	 *      "name" != null && "name" != ""
 	 *      "strength" > 0
 	 *      "types" != null && "types".size() > 0
+	 * @post An instance of this has been created, representing a beer with specified
+	 *       "barcode", "name", "strength" and list of beer types "types"
 	 */
 	public Beer (int barcode, String name, double strength, List<BeerType> types)
 	{

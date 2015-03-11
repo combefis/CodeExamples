@@ -3,10 +3,10 @@
 package be.combefis.codeexamples.myveryownbar.model;
 
 /**
- * Generic item characterised by a barcode, a name and a price
+ * Generic item characterised by a barcode and a name
  * 
  * @author Sébastien Combéfis
- * @version February 11, 2015
+ * @version March 11, 2015
  */
 public class Item
 {
@@ -15,7 +15,7 @@ public class Item
 	private final String name;
 	
 	/**
-	 * Creates an item with the specified barcode, name and price
+	 * Creates an item with a barcode and name
 	 * 
 	 * @pre "barcode" > 0
 	 *      "name" != null && "name" != ""
