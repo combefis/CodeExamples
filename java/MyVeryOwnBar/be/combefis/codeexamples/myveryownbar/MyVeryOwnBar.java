@@ -1,11 +1,16 @@
 // MyVeryOwnBar.java
 
-package be.combefis.codeexamples.myveryownbar.model;
+package be.combefis.codeexamples.myveryownbar;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import be.combefis.codeexamples.myveryownbar.model.Bar;
+import be.combefis.codeexamples.myveryownbar.model.Beer;
+import be.combefis.codeexamples.myveryownbar.model.FileFormatException;
+import be.combefis.codeexamples.myveryownbar.model.Order;
 
 /**
  * Main class
