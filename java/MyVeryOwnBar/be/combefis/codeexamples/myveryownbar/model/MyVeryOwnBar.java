@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Main class
+ * 
+ * @author Sébastien Combéfis
+ * @version March 10, 2015
+ */
 public final class MyVeryOwnBar
 {
 	public static void main (String[] args)

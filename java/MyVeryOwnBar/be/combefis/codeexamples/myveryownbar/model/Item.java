@@ -5,7 +5,7 @@ package be.combefis.codeexamples.myveryownbar.model;
 /**
  * Generic item characterised by a barcode and a name
  * 
- * @author Sébastien Combéfis
+ * @author SÃ©bastien CombÃ©fis
  * @version March 11, 2015
  */
 public class Item

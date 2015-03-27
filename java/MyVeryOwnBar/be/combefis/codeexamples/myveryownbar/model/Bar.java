@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * A bar that proposes a list of beers to sale
  * 
- * @author Sébastien Combéfis
+ * @author SÃ©bastien CombÃ©fis
  * @version February 11, 2015
  */
 public final class Bar

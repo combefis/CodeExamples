@@ -5,7 +5,7 @@ package be.combefis.codeexamples.myveryownbar.model;
 /**
  * Categories of beer
  * 
- * @author Sébastien Combéfis
+ * @author SÃ©bastien CombÃ©fis
  * @version February 11, 2015
  */
 public enum BeerType

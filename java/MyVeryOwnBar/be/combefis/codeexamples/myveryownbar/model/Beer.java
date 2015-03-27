@@ -9,7 +9,7 @@ import java.util.List;
  * Generic beer characterised by a list of beer types,
  * a strength, a barcode and a name
  * 
- * @author Sébastien Combéfis
+ * @author SÃ©bastien CombÃ©fis
  * @version March 11, 2015
  */
 public final class Beer extends Item

@@ -5,7 +5,7 @@ package be.combefis.codeexamples.myveryownbar.model;
 /**
  * Exception raised when the format of the file to load the bar is invalid
  * 
- * @author Sébastien Combéfis
+ * @author SÃ©bastien CombÃ©fis
  * @version March 3, 2015
  */
 @SuppressWarnings ("serial")

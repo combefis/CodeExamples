@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * A list of beers that have been ordered and consumed
  * 
- * @author Sébastien Combéfis
+ * @author SÃ©bastien CombÃ©fis
  * @version February 11, 2015
  */
 public final class Order
@@ -83,7 +83,7 @@ public final class Order
 	/**
 	 * A pair associating a beer with a quantity
 	 * 
-	 * @author Sébastien Combéfis
+	 * @author Sï¿½bastien Combï¿½fis
 	 * @version February 11, 2015
 	 */
 	private static final class Pair
