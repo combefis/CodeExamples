@@ -115,17 +115,17 @@ public final class Bar
 	 *      "price" > 0
 	 * @post The specified beer has been added to the list of beers
 	 *       proposed by this bar
-	 * @throws AlreadyProposedBeerException if the specified beer was
+	 * @throws AlreadyPresentBeerException if the specified beer was
 	 *         already proposed by this bar
 	 */
-	public void addBeer (Beer beer, double price) throws AlreadyProposedBeerException
+	public void addBeer (Beer beer, double price) throws AlreadyPresentBeerException
 	{
 		assert beer != null;
 		assert price > 0;
 		
 		if (beers.containsKey (beer))
 		{
-			throw new AlreadyProposedBeerException();
+			throw new AlreadyPresentBeerException();
 		}
 		
 		beers.put (beer, price);

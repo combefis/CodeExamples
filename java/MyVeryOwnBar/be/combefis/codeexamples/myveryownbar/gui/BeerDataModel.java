@@ -9,7 +9,7 @@ import java.util.Map;
 
 import javax.swing.table.AbstractTableModel;
 
-import be.combefis.codeexamples.myveryownbar.model.AlreadyProposedBeerException;
+import be.combefis.codeexamples.myveryownbar.model.AlreadyPresentBeerException;
 import be.combefis.codeexamples.myveryownbar.model.Beer;
 
 /**
@@ -43,13 +43,13 @@ public final class BeerDataModel extends AbstractTableModel
 	 * @pre "beer" != null
 	 *      "price" > 0
 	 * @post The specified "beer" has been added to this data model, with the specified "price"
-	 * @throws AlreadyProposedBeerException if the specified "beer" has already been added to this data model
+	 * @throws AlreadyPresentBeerException if the specified "beer" has already been added to this data model
 	 */
-	public void addBeer (Beer beer, double price) throws AlreadyProposedBeerException
+	public void addBeer (Beer beer, double price) throws AlreadyPresentBeerException
 	{
 		if (beers.contains (beer))
 		{
-			throw new AlreadyProposedBeerException();
+			throw new AlreadyPresentBeerException();
 		}
 		
 		beers.add (beer);

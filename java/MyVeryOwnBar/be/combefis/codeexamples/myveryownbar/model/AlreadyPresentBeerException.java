@@ -9,6 +9,6 @@ package be.combefis.codeexamples.myveryownbar.model;
  * @version February 11, 2015
  */
 @SuppressWarnings ("serial")
-public class AlreadyProposedBeerException extends Exception
+public class AlreadyPresentBeerException extends Exception
 {
 }
