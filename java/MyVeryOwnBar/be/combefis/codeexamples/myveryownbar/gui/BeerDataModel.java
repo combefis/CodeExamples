@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.swing.table.AbstractTableModel;
 
 import be.combefis.codeexamples.myveryownbar.model.AlreadyPresentBeerException;
+import be.combefis.codeexamples.myveryownbar.model.Bar;
 import be.combefis.codeexamples.myveryownbar.model.Beer;
 
 /**
@@ -20,21 +21,28 @@ import be.combefis.codeexamples.myveryownbar.model.Beer;
  */
 public final class BeerDataModel extends AbstractTableModel
 {
+	// Constants
+	private static final String[] COLUMNS_NAME = {"Name", "Price", "Stock"};
+	
 	// Instance variables
-	private final List<Beer> beers;
-	private final Map<Beer,Double> prices;
+	private final List<BeerInfo> beers;
 	
 	/**
 	 * Creates a data model representing a list of beers
 	 * 
-	 * @pre -
-	 * @post An instance of this is created, representing an empty
-	 *       list of beers with associated price
+	 * @pre "bar" != null
+	 * @post An instance of this is created, representing a
+	 *       list of beers with associated price corresponding
+	 *       to the specified "bar"
 	 */
-	public BeerDataModel()
+	public BeerDataModel (Bar bar)
 	{
-		beers = new ArrayList<Beer>();
-		prices = new Hashtable<Beer,Double>();
+		beers = new ArrayList<BeerInfo>();
+		
+		for (Beer beer : bar.getProposedBeers().keySet())
+		{
+			beers.add (new BeerInfo	(beer, bar.getPrice (beer), 0));
+		}
 	}
 	
 	/**
@@ -52,14 +60,19 @@ public final class BeerDataModel extends AbstractTableModel
 			throw new AlreadyPresentBeerException();
 		}
 		
-		beers.add (beer);
-		prices.put (beer, price);
+		beers.add (new BeerInfo (beer, price, 0));
 	}
 	
 	@Override
 	public int getColumnCount()
 	{
-		return 2;
+		return 3;
+	}
+
+	@Override
+	public String getColumnName (int column)
+	{
+		return COLUMNS_NAME[column];
 	}
 
 	@Override
@@ -69,9 +82,49 @@ public final class BeerDataModel extends AbstractTableModel
 	}
 
 	@Override
-	public Object getValueAt (int line, int column)
+	public Object getValueAt (int row, int column)
 	{
-		Beer beer = beers.get (line);
-		return column == 0 ? beer.getName() : prices.get (beer);
+		BeerInfo beerinfo = beers.get (row);
+		switch (column)
+		{
+			case 0: return beerinfo.beer.getName();
+			case 1: return beerinfo.price;
+			case 2: return beerinfo.stock;
+		}
+		
+		return null;
+	}
+	
+	/**
+	 * Information about a beer
+	 * - Price
+	 * - Quantity in stock
+	 * 
+	 * @author Sébastien Combéfis
+	 * @version April 2, 2015
+	 */
+	private static class BeerInfo
+	{
+		// Instance variables
+		private final Beer beer;
+		private final double price;
+		private final int stock;
+		
+		/**
+		 * Creates a new set of information about a beer
+		 * 
+		 * @pre "beer" != null
+		 *      "price" > 0
+		 *      "stock" >= 0
+		 * @post An instance of this is created, representing a set of information
+		 *       about the specified "beer", that is, its "price" and the quantity
+		 *       available in "stock"
+		 */
+		public BeerInfo (Beer beer, double price, int stock)
+		{
+			this.beer = beer;
+			this.price = price;
+			this.stock = stock;
+		}
 	}
 }

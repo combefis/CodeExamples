@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.swing.SwingUtilities;
+
+import be.combefis.codeexamples.myveryownbar.gui.BarGUI;
 import be.combefis.codeexamples.myveryownbar.model.Bar;
 import be.combefis.codeexamples.myveryownbar.model.Beer;
 import be.combefis.codeexamples.myveryownbar.model.FileFormatException;
@@ -24,7 +27,7 @@ public final class MyVeryOwnBar
 	{
 		try
 		{
-			Bar adhoc = new Bar ("beers.txt");
+			final Bar adhoc = new Bar ("beers.txt");
 			
 			System.out.println (adhoc.getName());
 			List<Beer> beers = new ArrayList<Beer> (adhoc.getProposedBeers().keySet());
@@ -37,6 +40,14 @@ public final class MyVeryOwnBar
 			Order order = adhoc.makeOrder (Arrays.asList (beers.get (0), beers.get (1), beers.get (0), beers.get (2)));
 			System.out.println (order);
 			System.out.println (order.totalPrice());
+			
+			SwingUtilities.invokeLater (new Runnable()
+			{
+				public void run()
+				{
+					new BarGUI (adhoc);
+				}
+			});
 			
 		}
 		catch (IOException exception)

@@ -2,13 +2,18 @@
 
 package be.combefis.codeexamples.myveryownbar.gui;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JTable;
+
 import be.combefis.codeexamples.myveryownbar.model.Bar;
 
 /**
  * A GUI to manage a bar
  * 
  * @author Sébastien Combéfis
- * @version March 27, 2015
+ * @version April 2, 2015
  */
 public final class BarGUI
 {
@@ -25,5 +30,13 @@ public final class BarGUI
 	public BarGUI (Bar bar)
 	{
 		this.bar = bar;
+		
+		JFrame frame = new JFrame (bar.getName());
+		frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+		
+		frame.add (new JTable (new BeerDataModel (bar)), BorderLayout.WEST);
+		
+		frame.setSize (800, 600);
+		frame.setVisible (true);
 	}
 }
