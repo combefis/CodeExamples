@@ -132,6 +132,23 @@ public final class Bar
 	}
 	
 	/**
+	 * Gets the price of a beer
+	 * 
+	 * @pre "beer" != null
+	 * @post The returned value contains the price of "beer"
+	 * @throws NotPresentBeerException if the "beer" is not proposed by this bar
+	 */
+	public double getPrice (Beer beer)
+	{
+		if (beers.get (beer) == null)
+		{
+			throw new NotPresentBeerException();
+		}
+		
+		return beers.get (beer);
+	}
+	
+	/**
 	 * Makes an order of beers
 	 * 
 	 * @pre beers != null && beers.size() > 0
