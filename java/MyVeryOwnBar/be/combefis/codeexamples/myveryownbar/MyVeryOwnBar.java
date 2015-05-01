@@ -3,6 +3,7 @@
 package be.combefis.codeexamples.myveryownbar;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +28,7 @@ public final class MyVeryOwnBar
 	{
 		try
 		{
-			final Bar adhoc = new Bar ("beers.txt");
+			final Bar adhoc = new Bar ("The Best Bar in the World", "beers.txt");
 			
 			System.out.println (adhoc.getName());
 			List<Beer> beers = new ArrayList<Beer> (adhoc.getProposedBeers().keySet());
@@ -49,6 +50,11 @@ public final class MyVeryOwnBar
 				}
 			});
 			
+		}
+		catch (SQLException exception)
+		{
+			System.err.println ("Error with the database.");
+			exception.printStackTrace();
 		}
 		catch (IOException exception)
 		{

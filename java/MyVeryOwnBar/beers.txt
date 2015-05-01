@@ -1,4 +1,3 @@
-The Best Bar in the World
 123;Barbar;8.0;BLONDE;3.50
 8293;Chimay Bleue;9.0;BROWN_ALE/TRAPPIST;3.69
 129;Trappe Quadruple;10.0;BROWN_ALE/TRAPPIST/QUADRUPEL;4.19
