@@ -72,12 +72,11 @@ public final class Bar
 	 */
 	private void readDatabase() throws SQLException
 	{
-		Statement statement = connection.createStatement();
-		ResultSet beers = statement.executeQuery ("SELECT * FROM beers");
+		ResultSet beers = connection.createStatement().executeQuery ("SELECT * FROM beers");
 		while (beers.next())
 		{
 			List<BeerType> beertypes = new ArrayList<BeerType>();
-			ResultSet categories = statement.executeQuery ("SELECT C.name FROM categories C, beercat B WHERE C.id_cat=B.id_cat AND B.barcode=" + beers.getInt	(1));
+			ResultSet categories = connection.createStatement().executeQuery ("SELECT C.name FROM categories C, beercat B WHERE C.id_cat=B.id_cat AND B.barcode=" + beers.getInt	(1));
 			while (categories.next())
 			{
 				beertypes.add (Enum.valueOf (BeerType.class, categories.getString (1)));
