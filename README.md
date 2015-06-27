@@ -6,4 +6,5 @@ This repository gathers examples of code of small projects that I wrote to suppo
 
 Programming languages that are currently present are:
 
+- C
 - Java
