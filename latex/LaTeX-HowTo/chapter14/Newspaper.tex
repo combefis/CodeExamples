@@ -1,0 +1,65 @@
+\documentclass[11pt,a4paper]{papertex}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\renewcommand{\logo}{
+	\mylogo{\includegraphics[width=2cm]{../images/uko-logo.png}}
+}
+\author{Sébastien Combéfis}
+\title{World News}
+\edition{UKO Publication}
+
+\begin{document}
+	\begin{frontpage}
+		\firstimage{../images/512px-Antennae,_Hubble_images.jpg}{Source : NASA}
+		
+		\firstnews{Découverte d'une nouvelle galaxie par des chercheurs de la NASA}{Des chercheurs de la NASA ont découvert, tôt ce matin, une nouvelle galaxie dans une zone jusqu'alors inexplorée de l'Univers. Cette découverte est une grande première, étant donné la technologie qui a été utilisée n'avait jusqu'à présent encore jamais servi pour de telles recherches.}{8:42}
+		
+		\secondnews{Disques durs quantiques}{Les disques durs quantiques seront bientôt disponibles à la vente pour les particuliers.}{Lors d'un salon international consacré aux technologies nouvelles qui a eu lieu le weekend dernier aux USA, une nouvelle entreprise a présenté ses nouveaux disques durs quantiques qui permettent de stocker des dizaines de téraoctets de données sur des surfaces inférieures au centimètre carré. Ces derniers devraient être disponibles pour le grand public d'ici la fin de l'année.}{Technologie}{9:12}
+		
+		\thirdnews{Le pop-corn est bon pour le moral}{Une nouvelle étude vient de montrer que le pop-corn contribue à la bonne humeur.}{Si vous vous sentez déprimés de temps en temps, rien de tel qu'un bol de pop-corn caramélisé. En effet, une récente étude menée par des diététiciens allemands a montré que la consommation de pop-corn caramélisé contribuait à remonter le moral. Les conclusions de cette sérieuse étude seront publiées le mois prochain dans la revue Food\&Health.}{../images/P1000166.jpg}{Diététique}{12:08}
+		
+		\begin{indexblock}{Table des matières}
+			\indexitem{Biologie -- Une dangereuse bactérie a été découverte}{bacterie}
+			
+			\indexitem{Informatique -- Barbie geek fait son apparition}{barbie-geek}
+		\end{indexblock}
+		
+		\begin{authorblock}
+			\includegraphics[width=2cm]{../images/uko-logo.png}
+			
+			UKO Publication
+		\end{authorblock}
+
+		\begin{weatherblock}{Météo Belgique -- Louvain-la-Neuve}
+			\weatheritem{../images/Anonymous_simple_weather_symbols_1.png}{Aujourd'hui}{12}{7}{}
+			\weatheritem{../images/Anonymous_simple_weather_symbols_11.png}{Demain}{11}{6}{}
+			\weatheritem{../images/Anonymous_simple_weather_symbols_9.png}{Lundi}{8}{5}{}
+		\end{weatherblock}
+	\end{frontpage}
+	
+	\newsection{Science}
+	
+	\begin{news}{3}{Une nouvelle souche résistante intrigante}{Des chercheurs en microbiologie d'un laboratoire japonais ont fait une découverte surprenante qui pourrait révolutionner la biologie moderne.}{Biologie}{bacterie}
+		\authorandplace{SC}{Japon}
+		\image{../images/512px-Bacteria_photomicrograph.jpg}{Photo des bactéries prise au microscope électronique.}
+		\timestamp{10:15} Alors qu'ils étaient en train d'étudier des levures dans le cadre d'une étude sur la production d'insuline artificielle, des chercheurs japonais ont découvert des bactéries assez particulières. Ces dernières ont la capacité de se reproduire avec d'autres bactéries, en créant ainsi des nouvelles qui ont une capacité de résistance assez forte aux antibiotiques les plus puissants.
+		
+		Le mécanisme utilisé par ces bactéries est assez particulier et ses détails échappent encore aux chercheurs. Il semblerait qu'une protéine primitive soit impliquée dans le mécanisme de mitose, mais cela doit encore être démontré grâce à des expériences qui sont actuellement mises en \oe uvre par le laboratoire.
+		
+		\columntitle{lines}{L'OMS se réunit la semaine prochaine.}
+		
+		Cette affaire inquiète bien évidemment ces chercheurs ainsi que toute la communauté scientifique. Les résultats de ces recherches seront présentés la semaine prochaine lors d'un colloque international qui sera suivi d'une réunion de l'OMS afin de prendre des décisions quant à cette situation.
+	\end{news}
+	
+	\begin{news}{3}{Barbie geek s'installe dans les supermarchés}{La nouvelle barbie se veut geek ! Depuis hier, on peut voir trôner une barbie informaticienne dans les rayons des principaux supermarchés du pays.}{Informatique}{barbie-geek}
+		\authorandplace{SC}{Belgique}
+		\timestamp{12:21} Depuis ce matin, on a pu constater l'apparition d'une nouvelle barbie dans les principaux supermarchés belges. Elle a des lunettes et est équipée d'un PC portable ; il s'agit de la barbie geek. À part cela, elle a un look plutôt sexy et porte des vêtements légers au top de la mode. Cette dernière était déjà disponible aux USA le mois passé, où elle a rencontré un franc succès. Elle est introduite aujourd'hui en Europe.
+		
+		\expandedtitle{doublebox}{Cette nouvelle barbie saurait-elle séduire des filles et les diriger vers des études en informatique ou renforcera-t-elle les aprioris geeks ?}
+		
+		Les professionnels de l'informatique se posent néanmoins des questions quant à la mauvaise image qu'une telle barbie pourrait donner sur le métier d'informaticien, en particulier auprès des filles. La question sera abordée lors de la prochaine réunion de la fédération des professionnels de l'informatique qui aura lieu dans dix jours à Bruxelles.
+	\end{news}
+\end{document}

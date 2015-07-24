@@ -1,0 +1,78 @@
+\documentclass{beamer}
+
+\usetheme{Rochester}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+
+\usepackage{moreverb}
+
+% Informations sur le document
+\title{Construire une présentation avec \LaTeX}
+\subtitle{Le package Beamer}
+\author{Sébastien Combéfis\inst{1}}
+\institute{\inst{1}UKO}
+\date{27 novembre 2010}
+
+\begin{document}
+	\frame[plain]{
+		\titlepage
+	}
+	
+	\section{Définir un transparent}
+	\begin{frame}
+		\frametitle{Plan}
+		\tableofcontents[currentsection]
+	\end{frame}
+	
+	\begin{frame}[containsverbatim]
+		\frametitle{Définir un transparent}
+		
+		\begin{definition}[Beamer]
+			\alert{Beamer} est un package qui permet de réaliser des slides en \LaTeX. Un slide est représenté par l'environnement frame.
+		\end{definition}
+		
+		\begin{block}{Code (document minimal)}
+			\begin{verbatimtab}[3]
+\begin{frame}
+	\frametitle{Titre}
+	
+	Contenu
+\end{frame}
+			\end{verbatimtab}
+		\end{block}
+	\end{frame}
+	
+	\section{Modifier le style}
+	\begin{frame}
+		\frametitle{Modifier le style}
+		\only<1>{\framesubtitle{Globalement pour tout le document}}
+		\only<2>{\framesubtitle{De manière locale}}
+		
+		\only<1>{
+			Plusieurs possibilités :
+		
+			\begin{itemize}
+				\item Style prédéfini
+				\item Redéfinitions de commandes
+				\item Définition d'un nouveau style
+			\end{itemize}
+		}
+		\only<2>{
+			Il suffit d'utiliser les commandes habituelles de \LaTeX.
+		}
+	\end{frame}
+	
+	\section{Conclusion}
+	\begin{frame}[allowframebreaks]
+		\frametitle{Conclusion}
+		
+		Bla bla
+		
+		\framebreak
+		
+		Suite du blabla
+	\end{frame}
+\end{document}

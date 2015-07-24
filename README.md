@@ -8,3 +8,4 @@ Programming languages that are currently present are:
 
 - C
 - Java
+- LaTeX
